@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{CB02C580-082E-44AB-B51F-FEE064DD56BF}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\Goblin.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions> /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Goblin.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Goblin.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>..\cdx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;STRICT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\Goblin.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> /opt:NOWIN98 </AdditionalOptions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Goblin.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>..\lib\Goblin.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimObj.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="avisurface.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="CDXFontBase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="CDXFontBitmap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="CDXFontGDI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBAvi.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBButtonMasked.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBCheckBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBColor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBComboBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBEditBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBFrame.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBHProgressBar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBInput.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBMsgBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBPanel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBPopMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBRadioButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBScrollBar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBSlider.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBStaticPic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBStaticText.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBTextBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBToolTip.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBWidget.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="GOBWidgetParent.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="msglist.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SystemButtons.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /opt:NOWIN98   /opt:NOWIN98 </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnimObj.h" />
+    <ClInclude Include="avisurface.h" />
+    <ClInclude Include="CDXFontBase.h" />
+    <ClInclude Include="CDXFontBitmap.h" />
+    <ClInclude Include="CDXFontGDI.h" />
+    <ClInclude Include="gobavi.h" />
+    <ClInclude Include="GOBButton.h" />
+    <ClInclude Include="GOBButtonMasked.h" />
+    <ClInclude Include="GOBCheckBox.h" />
+    <ClInclude Include="GOBColor.h" />
+    <ClInclude Include="GOBComboBox.h" />
+    <ClInclude Include="GOBDefs.h" />
+    <ClInclude Include="GOBEditBox.h" />
+    <ClInclude Include="GOBFrame.h" />
+    <ClInclude Include="GOBHProgressBar.h" />
+    <ClInclude Include="GOBHScrollBar.h" />
+    <ClInclude Include="GOBInput.h" />
+    <ClInclude Include="GOBManager.h" />
+    <ClInclude Include="GOBMenu.h" />
+    <ClInclude Include="GOBMsgBox.h" />
+    <ClInclude Include="GOBPanel.h" />
+    <ClInclude Include="GOBPopMenu.h" />
+    <ClInclude Include="GOBRadioButton.h" />
+    <ClInclude Include="GOBScrollBar.h" />
+    <ClInclude Include="GOBSlider.h" />
+    <ClInclude Include="GOBStaticPic.h" />
+    <ClInclude Include="GOBStaticText.h" />
+    <ClInclude Include="GOBTextBox.h" />
+    <ClInclude Include="GOBToolTip.h" />
+    <ClInclude Include="GOBVScrollBar.h" />
+    <ClInclude Include="GOBWidget.h" />
+    <ClInclude Include="GOBWidgetParent.h" />
+    <ClInclude Include="msglist.h" />
+    <ClInclude Include="SystemButtons.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
